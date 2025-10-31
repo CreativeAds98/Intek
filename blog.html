@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>INDTEK</title>
+    <title>Indtek</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,6 +29,137 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Customized CSS  -->
+         <style>
+        .text-primary
+        {
+         color: #FF4B33 !important;
+         }
+         
+         .bg-primary
+         {
+         background-color: #34073b! important;
+        }
+
+        .btn-primary
+        {
+         color: #fff;
+         background-color: #FF4B33;
+         border-color: #FF4B33;
+      }
+    </style>
+
+    <style>
+    /* Footer Social icon color */
+    .btn-outline-primary
+
+    {
+
+    color: #FF4B33 !important;
+    border-color: #cddb09;
+    }
+    </style>
+<!-- ✅ Mail Animation Popup + Contact Form -->
+<style>
+/* ✉️ Floating Mail Icon */
+.mail-popup {
+  position: fixed;
+  right: 20px;
+  bottom: 150px;
+  z-index: 11000;
+  width: 90px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+.mail-popup:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.mail-popup img {
+  width: 100%;
+  height: auto;
+  animation: float 2.5s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 📋 Contact Form Popup */
+.contact-form-popup {
+  position: fixed;
+  right: 120px;
+  bottom: 150px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 280px;
+  z-index: 11001;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.contact-form-popup.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Inputs & Button */
+.contact-form-popup input,
+.contact-form-popup textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.contact-form-popup button {
+  width: 100%;
+  background: #34073b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.contact-form-popup button:hover {
+  background: #34073b;
+}
+
+/* Close Button */
+.contact-form-popup .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+}
+.contact-form-popup .close-btn:hover {
+  color: #000;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .mail-popup {
+    width: 70px;
+    right: 10px;
+    bottom: 20px;
+  }
+  .contact-form-popup {
+    right: 90px;
+    bottom: 20px;
+    width: 240px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -41,13 +172,29 @@
     </div>
     <!-- Spinner End -->
 
+<!-- ✉️ Floating Mail Icon -->
+<div class="mail-popup" id="mailIcon" title="Contact Us">
+  <img src="img/mail.png" alt="Mail Animation">
+</div>
+
+<!-- 📋 Hidden Contact Form -->
+<div class="contact-form-popup" id="contactForm">
+  <span class="close-btn" id="closeForm">&times;</span>
+  <h4 style="margin-bottom:10px;">Send Us a Message</h4>
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <input type="text" placeholder="Phone Number" required>
+  <input type="text" placeholder="Mission" required>
+  <textarea rows="3" placeholder="Your Message" required></textarea>
+  <button type="submit">Submit</button>
+</div>
 
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
                 <a href="index.html" class="navbar-brand">
-                 <img src="img/logo.png" alt="Indtek Logo" style="height:60px; width: auto;"/>
+                 <img src="img/logo-2.gif" alt="Indtek Logo" style="height:60px; width: auto;"/>
 
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -58,17 +205,14 @@
                     <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
-                      <!--   <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                             <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="service.html" class="dropdown-item">Sales</a>
+                                <a href="service.html" class="dropdown-item">Services</a>
                             </div>
-                        </div>-->
+                        </div>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
@@ -189,7 +333,7 @@
 
 
 
-    <!-- Newsletter Start -->
+    <!-- Newsletter Start 
     <div class="container-fluid bg-primary newsletter p-0">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
@@ -212,7 +356,7 @@
             </div>
         </div>
     </div>
-    <!-- Newsletter End -->
+   Newsletter End -->
 
 
     <!-- Footer Start -->
@@ -228,12 +372,10 @@
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>153 C, LIC Colony,<br> Selvapuram, Coimbatore <br> 641 026, India</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>No.19, SF No: 476/4, <br>Lakshmi Garden 3A, Balaji <br> Industrial Estate, Keeranatham ,<br>Coimbatore -641035</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+91 90258 58360</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@indtek.co.in</p>
+                    <p><i class="fa fa-envelope me-3"></i>admin@indtek.co.in</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!"><i
-                                class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!"><i
@@ -256,9 +398,7 @@
                     <h5 class="text-white mb-4">Our Services</h5>
                     <a class="btn btn-link" href="#!">Material Testing Equipment</a>
                     <a class="btn btn-link" href="#!">Sand Testing Equipment</a>
-                    <a class="btn btn-link" href="#!">Calibration & Precision Measurement</a>
-                    <a class="btn btn-link" href="#!">Installation and Maintenance Support</a>
-                    <a class="btn btn-link" href="#!">After-Sales Technical Assistance</a>
+                    <a class="btn btn-link" href="#!">NABL Accreditation</a>
                 </div>
             </div>
         </div>
@@ -303,6 +443,33 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- ✅ Mail Animation Popup + Contact Form Script -->
+     <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.querySelector('.mail-popup');
+  popup.style.opacity = '0';
+  popup.style.transform = 'translateY(20px)';
+  setTimeout(() => {
+    popup.style.transition = 'all 0.6s ease';
+    popup.style.opacity = '1';
+    popup.style.transform = 'translateY(0)';
+  }, 800);
+});
+
+// 📨 Toggle Form
+const mailIcon = document.getElementById('mailIcon');
+const contactForm = document.getElementById('contactForm');
+const closeForm = document.getElementById('closeForm');
+
+mailIcon.addEventListener('click', () => {
+  contactForm.classList.toggle('show');
+});
+
+closeForm.addEventListener('click', () => {
+  contactForm.classList.remove('show');
+});
+</script>
 </body>
 
 </html>

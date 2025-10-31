@@ -1,3 +1,15 @@
+:root {
+    /* Orange theme */
+    --bs-primary: #FF6A00;       /* primary orange */
+    --bs-secondary: #000000;     /* lighter orange */
+    --bs-dark: #2B1B2F;          /* dark color for text */
+    --bs-light: #FFF3E6;         /* light orange tint */
+    --bs-white: #FFFFFF;         /* white */
+    --bs-bg: #FFF6F2;            /* background tint */
+    
+    --light: rgba(255,255,255,0.95);
+}
+
 /********** Template CSS **********/
 
 /*** Spinner ***/
@@ -143,7 +155,7 @@
     right: 0;
     width: calc(50% + 45px);
     height: 100%;
-    background: var(--bs-primary);
+    background: transparent;
     z-index: -1;
 }
 
@@ -326,7 +338,7 @@
     left: 0;
     width: calc(50% + 45px);
     height: 100%;
-    background: var(--bs-primary);
+    background: transparent;
     z-index: -1;
 }
 
@@ -423,6 +435,7 @@
     transition: .3s;
 }
 
+
 .footer .btn.btn-link:hover {
     color: var(--bs-white);
     letter-spacing: 1px;
@@ -461,4 +474,7 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+.footer{
+    background-color:#34073b! important;
 }
